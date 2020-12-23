@@ -10,8 +10,13 @@ class Block {
     this.width = width;
     this.height = height;
     World.add(world, this.body);
+    console.log(this.body.speed)
+  
   }
   display(){
+    if(this.body.speed>0){
+      World.remove(world,this.body)
+    }
     var pos =this.body.position;
     rectMode(CENTER);
     strokeWeight(2)
